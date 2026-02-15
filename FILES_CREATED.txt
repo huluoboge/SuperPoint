@@ -1,0 +1,72 @@
+SuperPoint ONNX/TensorRT 转换 - 已创建文件清单
+==============================================
+
+生成的模型
+----------
+✓ superpoint.onnx (5.0 MB)          - ONNX格式模型，可直接使用
+
+核心脚本
+--------
+✓ convert_to_onnx.py                - PyTorch → ONNX 转换脚本
+✓ convert_to_tensorrt.py            - ONNX → TensorRT 转换脚本
+✓ onnx_inference.py          ⭐     - ONNX Runtime 推理脚本 (推荐)
+✓ tensorrt_inference.py             - TensorRT 推理脚本
+✓ quick_convert.sh                  - 一键转换脚本
+
+工具脚本
+--------
+✓ test_conversion.py                - 环境检查工具
+✓ check_inference_options.py        - 推理方案推荐工具
+
+文档
+----
+✓ QUICKSTART.md              ⭐     - 快速开始指南 (从这里开始！)
+✓ README_CONVERSION.md              - 完整转换和使用指南
+✓ GPU_COMPATIBILITY.md              - GPU兼容性详细说明
+✓ TENSORRT_CONVERSION_GUIDE.md      - TensorRT完整指南
+✓ FILES_CREATED.txt                 - 本文件
+
+快速开始
+========
+
+对于您的 GTX 1060 6GB，推荐使用 ONNX Runtime：
+
+1. 安装依赖:
+   pip install onnxruntime-gpu scipy
+
+2. 运行推理:
+   python onnx_inference.py --image your_image.jpg --benchmark
+
+3. 查看结果!
+
+详细说明
+========
+
+查看 QUICKSTART.md 获取30秒快速入门指南
+查看 README_CONVERSION.md 获取完整文档
+
+关键信息
+========
+
+✓ ONNX模型已成功创建
+✓ 支持您的GTX 1060 6GB
+✓ 推荐使用ONNX Runtime (简单、快速)
+⚠ TensorRT 10.x不支持您的GPU
+  (可选：降级到TensorRT 8.6)
+
+预期性能
+========
+
+ONNX Runtime (GTX 1060, 640x480):
+- 推理时间: ~8-12ms
+- FPS: ~80-120
+- 比PyTorch快约2倍
+
+下一步
+======
+
+$ python check_inference_options.py     # 查看您的选项
+$ cat QUICKSTART.md                     # 快速开始指南
+$ python onnx_inference.py --help       # 查看使用说明
+
+祝使用愉快！
